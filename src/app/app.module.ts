@@ -13,6 +13,9 @@ import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./service/inmemory/in-memory-data.service";
 import {HeroSearchComponent} from './component/hero-search/hero-search.component';
 import {LoggingInterceptor} from "./interceptor/logging.interceptor";
+import {HeroDetailGuardGuard} from "./guard/hero-detail/hero-detail-guard.guard";
+import {LoadFormModuleGuard} from "./guard/load-form-module/load-form-module.guard";
+import {CanDeactivateGuardGuard} from "./guard/can-deactivate-route/can-deactivate-guard.guard";
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import {LoggingInterceptor} from "./interceptor/logging.interceptor";
       provide: HTTP_INTERCEPTORS,
       useClass: LoggingInterceptor,
       multi: true
-    }
+    },
+    HeroDetailGuardGuard,
+    LoadFormModuleGuard,
+    CanDeactivateGuardGuard
   ],
   bootstrap: [AppComponent]
 })
