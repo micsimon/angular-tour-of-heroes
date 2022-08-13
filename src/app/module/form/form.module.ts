@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HeroFormComponent} from "./component/hero-form/hero-form.component";
 import {FormRoutingModule} from "./form-routing.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import {FormRoutingModule} from "./form-routing.module";
   ],
   imports: [
     CommonModule,
-    FormRoutingModule
+    FormRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class FormModule {

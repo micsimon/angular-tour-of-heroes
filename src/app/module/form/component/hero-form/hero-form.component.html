@@ -1,1 +1,10 @@
-<p>hero-form works!</p>
+<div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label for="firstname">Firstname</label>
+    <input id="firstname" formControlName="firstname" type="text">
+    <div *ngIf="showValidationMessage()" class="error-message">Firstname is invalid</div>
+    <button type="submit">submit</button>
+  </form>
+
+</div>
